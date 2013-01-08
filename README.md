@@ -17,6 +17,12 @@ The usage about 'fire_on' and 'hover_delay_close' has been described on the javs
 Other options please refer lecar-red's bootstrapx-clickover:
 https://github.com/lecar-red/bootstrapx-clickover
 
+Resources
+---------
+
+See examples at http://baguajie.cloudfoundry.com/
+please move your mouse over user avatars to experience!
+
 Version
 -----------
 
