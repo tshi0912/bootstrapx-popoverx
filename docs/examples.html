@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BootstrapX - popoverx :: Examples</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding-top: 60px;
+}
+</style>
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/holder.js"></script>
+<script type="text/javascript" src="../js/bootstrapx-popoverx.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$('[rel="popoverx"]').popoverx({
+			fire_on : 'hover',
+			hover_delay_close : 2000
+		});
+		$('#delay-close').popoverx({
+			fire_on : 'hover',
+			hover_delay_close : 2000
+		});
+		$('#ensure-visiable').popoverx({
+			fire_on : 'hover',
+			ensure_visiable : true,
+			placement : 'left'
+		});
+	})
+</script>
+</head>
+
+<body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a class="brand" href="#">BootstrapX - popoverx</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">Examples</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="hero-unit">
+				<h2>BootstrapX - popoverx</h2>
+				<p>
+					Inspired by lecar-red's <a
+						href="https://github.com/lecar-red/bootstrapx-clickover">bootstrapx-clickover</a>,
+					adding hover ability which also performs the same functions with
+					clickover.
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" rel="popoverx"
+						title="popoverx code"
+						data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">See
+						Example</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div span="offset4 span8 last">
+				<h2>Why?</h2>
+				<p>
+					lecar-red's <a
+						href="https://github.com/lecar-red/bootstrapx-clickover">bootstrapx-clickover</a>
+					is a great extension for Click managed popovers. However it doesn't
+					provide the hover managed function. Although the native popover on
+					bootstrap has the ability on hover, it's hard to be integrated with
+					html content returned from server via ajax. Also it will generate
+					popover instance for each trigger element which is not expected in
+					the most cases. That's also lecar-red's <a
+						href="https://github.com/lecar-red/bootstrapx-clickover">bootstrapx-clickover</a>
+					resolved for us:
+				<ul>
+					<li>Allow only single popover at any time</li>
+					<li>onShown and onClose call back give us the chance to
+						interact with server</li>
+					<li>Option to close popover when click is else where in body</li>
+				</ul>
+				</p>
+				<p>Popoverx provide more usage than clickover, not only for
+					click managed function but also for hover. Meanwhile it provides
+					the option to ensure your popover won't exceed the bound of
+					browser.</p>
+
+				<h3>Popoverx Features</h3>
+				<ul>
+					<li>Ensure popover inside the broswer boundary</li>
+					<li>Hover trigger popover</li>
+					<li>Hover close delay when trigger popover via hovering which
+						give you the chance to move mouse to popover itself.</li>
+				</ul>
+			</div>
+			<!--/span-->
+		</div>
+		<!-- .row -->
+
+		<div class="row">
+			<div span="offset4 span8 last">
+				<h2>Examples</h2>
+				<hr>
+				<h3>Hover</h3>
+				<p>Button will open popoverx even if you mouse over to popover
+					itself.</p>
+				<div class="well">
+					<a id="delay-close" href="#" class="btn btn-danger"
+						title="Move your mouse over me"
+						data-content="I will stay here until you move out of me">Hover
+						for popoverx</a>
+				</div>
+				<h3>Code</h3>
+				<p>Enable popoverx via javascript:
+				<pre>$('#example').popoverx(options)</pre>
+				<hr>
+				<h3>Ensure visiable</h3>
+				<p>
+					Ensure the popover won't exceed the boundary of browser.<br>
+					Actually its placement was set as 'left'
+				</p>
+				<div class="well">
+					<a href="#" id=ensure-visiable class="btn btn-primary"
+						title="Ensure Visiable"
+						data-content="I am very loooooooooooooooooooooooooooong, and will out of browser boundary....">Ensure
+						Visiable</a>
+				</div>
+				<h3>Code</h3>
+				<pre>
+$('#ensure-visiable').popoverx({
+  fire_on: 'hover',
+  ensure_visiable: true,
+  placement: 'left'            
+});</pre>
+				<hr>
+				<h3>Options</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>type</th>
+							<th>default</th>
+							<th>description</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>fire_on</td>
+							<td>string</td>
+							<td>click</td>
+							<td>tigger event, currently only support 'click' and 'hover'</td>
+						</tr>
+
+						<tr>
+							<td>hover_delay_close</td>
+							<td>number</td>
+							<td>0</td>
+							<td>Value in milliseconds. Values greater than 0 will keep
+								popoverx open for giving user the change to mouse to popover
+								itself</td>
+						</tr>
+
+						<tr>
+							<td>ensure_visiable</td>
+							<td>boolean</td>
+							<td>true</td>
+							<td>Ensure the popover won't exceed the boundary of browser.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<hr>
+		<div class="row">
+			<div span="offset4 span8 last">
+				<h2>Few Examples</h2>
+				<div class="row-fluid">
+					<ul class="thumbnails">
+						<li class="span3">
+							<div class="thumbnail">
+								<img alt="300x200" src="holder.js/300x200"
+									style="width: 300px; height: 200px;">
+								<div class="caption">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam. Donec id elit non mi porta gravida at eget metus. Nullam
+										id dolor id nibh ultricies vehicula ut id elit.</p>
+									<p>
+										<a class="btn btn-primary" href="#" rel='popoverx' title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+										<a class="btn" href="#" rel='popoverx' title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="span3">
+							<div class="thumbnail">
+								<img alt="300x200" src="holder.js/300x200"
+									style="width: 300px; height: 200px;">
+								<div class="caption">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam. Donec id elit non mi porta gravida at eget metus. Nullam
+										id dolor id nibh ultricies vehicula ut id elit.</p>
+									<p>
+										<a class="btn btn-primary" rel='popoverx' href="#"
+											title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+										<a class="btn" rel='popoverx' href="#" title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="span3">
+							<div class="thumbnail">
+								<img alt="300x200" src="holder.js/300x200"
+									style="width: 300px; height: 200px;">
+								<div class="caption">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam. Donec id elit non mi porta gravida at eget metus. Nullam
+										id dolor id nibh ultricies vehicula ut id elit.</p>
+									<p>
+										<a class="btn btn-primary" rel='popoverx' href="#"
+											title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+										<a class="btn" rel='popoverx' href="#" title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="span3">
+							<div class="thumbnail">
+								<img alt="300x200" src="holder.js/300x200"
+									style="width: 300px; height: 200px;">
+								<div class="caption">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam. Donec id elit non mi porta gravida at eget metus. Nullam
+										id dolor id nibh ultricies vehicula ut id elit.</p>
+									<p>
+										<a class="btn btn-primary" rel='popoverx' href="#"
+											title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+										<a class="btn" rel='popoverx' href="#" title="popoverx code"
+											data-content="
+            Hover content.
+            &lt;pre&gt;$('[rel='popoverx']').popoverx();&lt;/pre&gt;
+            &lt;button class='btn' data-toggle='button' data-dismiss='popoverx'
+            &gt;Close&lt;/button&gt;">Hover Me</a>
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<hr>
+	</div>
+	<!--/.container-->
+
+	<footer> Last Update: 2013-01-09 </footer>
+
+</body>
+</html>
