@@ -20,7 +20,7 @@ https://github.com/lecar-red/bootstrapx-clickover
 Resources
 ---------
 
-See examples at http://baguajie.cloudfoundry.com/, please move your mouse over user avatars to experience!
+See examples at http://baguajie.net/, please move your mouse over user avatars to experience!
 
 Version
 -----------
