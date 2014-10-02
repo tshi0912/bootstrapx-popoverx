@@ -173,7 +173,7 @@
 
 		// provide some callback hooks
         typeof this.options.onHidden == 'function' && this.options.onHidden.call(this);
-        this.$element.trigger('hidden');
+        this.$element.trigger('hidden.popoverx');
       }
     }
     , show: function () {
